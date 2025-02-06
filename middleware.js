@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 
+// This will run every time route will be executed
 app.use(function(req, res, next) {
     console.log('Running before Express JS MiddleWare 1');
     next();
