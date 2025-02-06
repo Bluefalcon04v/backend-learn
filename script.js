@@ -1,12 +1,14 @@
-const express = require('express')
-const app = express()
+const express = require("express");
+const app = express();
 
-app.get('/', function (req, res) {
-  res.send('Hello Home')
-})
+app.set("view engine", "ejs");
 
-app.get('/profile/:username', function (req, res) {
-    res.send(`Hello ${req.params.username}`)
-  })
+app.get("/", function (req, res) {
+  res.render("index", {age: 12}); // adding the dynamic value of age
+});
 
-app.listen(3000)
+app.get("/about", function (req, res) {
+  res.render("about");
+});
+
+app.listen(3000);
